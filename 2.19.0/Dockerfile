@@ -1,7 +1,7 @@
 FROM            allanlei/node:6.3.1
 
 ENV             VERSION=2.19.0
-ENV             PATH=$PATH:/usr/src/app/node_modules/coffee-script/bin:/usr/src/app/node_modules/hubot/bin
+
 # ENV             HUBOT_NAME=hubot
 # ENV             HUBOT_ADAPTER=shell
 # ENV             HUBOT_ALIAS=false
@@ -18,6 +18,8 @@ RUN             apk --no-cache add --virtual .build-deps \
                     hubot-help \
                     hubot-redis-brain && \
                 apk del .build-deps
+
+ENV             PATH=$PATH:/usr/src/app/node_modules/coffee-script/bin:/usr/src/app/node_modules/hubot/bin
 
 COPY            entrypoint.sh /
 RUN             chmod +x /entrypoint.sh
