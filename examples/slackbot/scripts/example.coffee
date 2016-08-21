@@ -7,8 +7,6 @@
 #   Uncomment the ones you want to try and experiment with.
 #
 #   These are from the scripting documentation: https://github.com/github/hubot/blob/master/docs/scripting.md
-console.log('EXAMPLE LOADED');
-
 module.exports = (robot) ->
 
   robot.hear /badger/i, (res) ->
