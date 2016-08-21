@@ -17,6 +17,7 @@ Pre-installed ```hubot``` modules:
   * ```HUBOT_ADAPTER```: The adapter to use (default: ```shell```)
   * ```HUBOT_EXTERNAL_SCRIPTS```: Space seperated list of hubot modules.  If this is not set, the image will automatically generate this list based on installed npm packages that have ```hubot``` as a ```peerDependencies```.
   (default: Auto-detect from installed packages)
+  * ```REDIS_URL```: The redis instance to use. Format: ```redis://[[username]:[password]]@HOSTNAME[:PORT]/DB``` (optional, see [hubot-redis-brain](https://github.com/hubot-scripts/hubot-redis-brain))
 
 ## Examples
 Check out [examples](examples) for a slackbot to get started.
