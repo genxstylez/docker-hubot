@@ -1,0 +1,5 @@
+{
+  "dependencies": {
+    "hubot-slack": "^4.0.2"
+  }
+}
