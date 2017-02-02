@@ -14,8 +14,8 @@ RUN             apk --no-cache add --virtual .build-deps \
                     git && \
                 npm install \
                     hubot@$VERSION \
-                    hubot-diagnostics \
-                    hubot-help \
+                    # hubot-diagnostics \
+                    # hubot-help \
                     hubot-redis-brain && \
                 apk del .build-deps
 
@@ -37,5 +37,8 @@ ONBUILD RUN     apk --no-cache add --virtual .build-deps \
                     cd $(npm root -g)/npm && \
                     npm install fs-extra && \
                     sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js && \
+                    cd /usr/src/app && \
+                    npm install && \
+
                 apk del .build-deps
 ONBUILD COPY    . .
