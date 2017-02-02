@@ -34,8 +34,8 @@ ONBUILD RUN     apk --no-cache add --virtual .build-deps \
                     build-base \
                     python \
                     git && \
-                    cd $(npm root -g)/npm \
-                      && npm install fs-extra \
-                      && sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js
+                    cd $(npm root -g)/npm && \
+                    npm install fs-extra && \
+                    sed -i -e s/graceful-fs/fs-extra/ -e s/fs\.rename/fs.move/ ./lib/utils/rename.js && \
                 apk del .build-deps
 ONBUILD COPY    . .
